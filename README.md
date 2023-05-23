@@ -1,6 +1,21 @@
 # Bunce-Revilla-2023-education-norms
-Data and analysis scripts for 2023 manuscript relating to the effect of education on Indigenous norms
+files relating to the manuscript:
 
-The analysis code in R and Stan is currently being cleaned and organized. We will upload it here before the manuscript is sent for peer review.
+Bunce JA and C Revilla-Minaya (2023). Western educational environment drives Indigenous cultural dynamics in Amazonia. SocArXiv: https://osf.io/preprints/socarxiv/g2xjy
 
-If you have questions, feel free to contact John Bunce (john_bunce@eva.mpg.de) or Caissa Revilla Minaya (caissa_revilla@eva.mpg.de).
+
+Steps to reproduce the analysis in this paper:
+
+1) Create a project folder on your machine. Name it whatever you want.
+
+2) Inside this project folder, put the file ``RunAll.R``
+
+3) Also inside the project folder, create three sub-folders named (exactly) ``Code``, ``Plots``, and ``Data``
+
+4) Inside the ``Data`` folder, put the file ``School_data.csv``
+
+5) Inside the ``Code`` folder, put all the other files.
+
+6) Open the file ``RunAll.R``. Inside it, you can set the path to your project folder. Then run its parts in order in R.
+
+Figures in the manuscript and appendix will appear in the ``Plots`` folder. 
