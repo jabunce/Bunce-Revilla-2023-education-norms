@@ -1,7 +1,7 @@
 # Bunce-Revilla-2023-education-norms
 files relating to the manuscript:
 
-Bunce JA and C Revilla-Minaya (2023). Western educational environment drives Indigenous cultural dynamics in Amazonia. SocArXiv: https://osf.io/preprints/socarxiv/g2xjy
+Bunce JA and C Revilla-Minaya (2023). Drivers of Indigenous cultural dynamics in Amazonian schools. SocArXiv: https://osf.io/preprints/socarxiv/g2xjy
 
 
 Steps to reproduce the analysis in this paper:
