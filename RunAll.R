@@ -19,9 +19,9 @@ library(dplyr) # pull function to extract data from model fit "tibbles"
 
 # Set working directory: the path to the folder containing the subfolders Code, Plots, and Data
 # on mac
-setwd("/Users/johnbunce/Dropbox/Matsigenka-Mestizo_project_2014/boarding_school_paper_2023/analysis/for_Github")
+setwd("/Users/XXXXX/Dropbox/Matsigenka-Mestizo_project_2014/boarding_school_paper_2023/analysis/for_Github")
 # on pc
-#setwd("C:/Users/John/Dropbox/Matsigenka-Mestizo_project_2014/boarding_school_paper_2023/analysis/for_Github")
+#setwd("C:/Users/XXXXX/Dropbox/Matsigenka-Mestizo_project_2014/boarding_school_paper_2023/analysis/for_Github")
 # on server
 #setwd("~/growth_23jun22/analysis_height_mal_21jun22")
 
