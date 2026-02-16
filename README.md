@@ -12,7 +12,7 @@ Steps to reproduce the analysis in this paper:
 
 3) Also inside the project folder, create three sub-folders named (exactly) ``Code``, ``Plots``, and ``Data``
 
-4) Inside the ``Data`` folder, put the file ``School_data.csv``
+4) Inside the ``Data`` folder, put the files ``School_data.csv`` and ``SchoolComm_data.csv``
 
 5) Inside the ``Code`` folder, put all the other files.
 
