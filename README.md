@@ -4,7 +4,10 @@ files relating to the manuscript:
 Bunce JA and C Revilla-Minaya (2023). Drivers of Indigenous cultural dynamics in Amazonian schools.
 
 
-Steps to reproduce the analysis in this paper:
+On the right side of this page, under Releases, is a Microsoft Excel spreadsheet with school schedule calculations.
+
+
+Steps to reproduce the statistical analysis in this paper:
 
 1) Create a project folder on your machine. Name it whatever you want.
 
