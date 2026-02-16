@@ -48,7 +48,6 @@ data_list_5 <- list(
 
 
 start_list_5 <- list(
-  muInt = 0,
   
   zInt = matrix(0, nrow=J, ncol=A),
   sigmaInt = as.array(rep(1, times=A)),
@@ -58,22 +57,20 @@ start_list_5 <- list(
   sigmaSch = matrix(1, nrow=R, ncol=A),
   L_S = array(data=0, dim=c(R,A,A)),
 
-  X = array(data=1/G, dim=c(G,S,A)),
+  X = array(data=1/G, dim=c(S,A,G)),
   bGrade = matrix(0, nrow=S, ncol=A),
 
   beta = as.array(rep(0, times=K)),
-  muGamma = 0,
-  off_Gamma= matrix(0, nrow=K, ncol=R),
-  sigma_beta=1,
-  sigma_gamma=1
+
+  off_Gamma= matrix(0, nrow=K, ncol=R)
 )
 
 
 
-samps <- number_samps
-num_chains <- number_chains
+# samps <- 3000
+# num_chains <- 6 #6
 
-model <- cmdstan_model(model_file[1])
+model <- cmdstan_model(model_file[3])
 
 m5 <- model$sample(
         seed=1,
@@ -95,15 +92,11 @@ m5$save_object(file = "m5_fit.RDS") #save stan output so you don't have re-run m
 print(n=500, as_tibble(
     m5$summary(c(
             "lp__",
-            "muInt",
             "X",
             "bGrade",
             "CumuGrade",
             "sigmaInt",
-            "sigma_beta",
-            "sigma_gamma",
             "beta",
-            "muGamma",
             "off_Gamma",
             "off_Sch",
             "off_Int"
@@ -111,14 +104,15 @@ print(n=500, as_tibble(
 ))#[,1:2])
 
 post5 <- m5$draws(format = "df", , inc_warmup = FALSE)
-str(post5, list.len = 754)
+#str(post5, list.len = 754)
 saveRDS(post5, "post5.RDS")
 #post5 <- readRDS("post5.RDS")
-
+#post5$muInt[1,1]
 
 
 fitmod <- m5$draws(format = "draws_array", inc_warmup = TRUE) # array format keeps chains separate for plotting
 str(fitmod)
+#fitmod[,,"bS[1,1]"][1:2000]
 
 color_scheme_set("mix-blue-red")
 
