@@ -22,21 +22,12 @@ transformed data {
 
 parameters {
 
-  //real muInt;                 //intercept mean
-  array[J] vector[A] zInt;                  //J-array of column T-vectors of intercept z-scores for each individual
-  vector<lower=0>[A] sigmaInt;     //intercept stdevs: 2-array of T-vectors, one vector for each ethnicity
+  array[J] vector[A] zInt;       //J-array of column T-vectors of intercept z-scores for each individual
+  vector<lower=0>[A] sigmaInt;   //intercept stdevs: 2-array of T-vectors, one vector for each ethnicity
   cholesky_factor_corr[A] L_R;   //2-array of cholesky factor TxT matrices, for correlation matrix for intercepts
 
-  //array[A] vector[J] b1;
-
   vector[K] beta;                // different beta and gamma for each question in each year
-  //real muGamma;
   vector<lower=0>[K] gamma;
-
-  //array[K] vector<lower=-1>[R] off_Gamma;  // discrimination constrained positive in model block
-
-  //real<lower=0> sigma_beta;      // scale of question
-  //real<lower=0> sigma_gamma;     // scale of discrimination
 }
 
 
@@ -55,30 +46,19 @@ transformed parameters {
 model {
   vector[N] params;
   real alpha;
-  //real gamma;
   
-  //muInt ~ normal(0,1);
   zInt ~ multi_normal(zeros, diag_matrix(ones));        //array of intercept z-scores for each indiv, sample two at a time from a normal
-  sigmaInt ~ normal(1,1); //exponential(0.1); //1 10
+  sigmaInt ~ normal(1,1); 
   L_R ~ lkj_corr_cholesky(4);
 
-  beta ~ normal(0,1);               //sigma_beta);
-  //muGamma ~ normal(0,sigma_gamma);
+  beta ~ normal(0,1); 
   gamma ~ normal(1,1);
-
-  //off_Gamma ~ multi_normal(zeros, diag_matrix(ones));
-  
-  //sigma_beta ~ exponential(100);    //10  // exponential(beta), where here beta = lambda = 1/mean
-  //sigma_gamma ~ exponential(100);   // or use uniform(0,5), both prevent ceiling effect
 
 
   for (n in 1:N) {
 
     alpha = 0 + off_Int[jj[n],aa[n]];                      //random effect for person per year
 
-    //gamma = 1 + off_Gamma[kk[n],rr[n]];                       // constrain gamma positive
-
-    //params[n] = gamma*(alpha - beta[kk[n]]);
     params[n] = gamma[kk[n]]*(alpha - beta[kk[n]]);    
 
   } //for
@@ -87,24 +67,4 @@ model {
 }
 
 
-//generated quantities {       //for computing waic
-  //vector[N] log_lik;
-  //real alpha;
-
-  //matrix[J,A] aInt;           //reconstructed intercept for each individual
-  //matrix[A,A] R;         //2-array of TxT correlation matrices
-  //matrix[A,A] Cov_R;       //2-array of TxT variance-covariance matrices
-
-  //for (n in 1:N){
-  //  aInt[jj[n],aa[n]] = muInt + off_Int[jj[n],aa[n]];
-
-    //alpha = muInt + off_Int[jj[n],aa[n]];
-
-    //log_lik[n] = bernoulli_logit_lpmf( y[n] | gamma[kk[n]]*(alpha - beta[kk[n]]) );
-
-  //} //for
-
-  //R = L_R * L_R';
-  //Cov_R = diag_pre_multiply(sigmaInt, L_R) * diag_pre_multiply(sigmaInt, L_R)';
-//}
 
