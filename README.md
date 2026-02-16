@@ -26,5 +26,5 @@ Figures in the manuscript will appear in the ``Plots`` folder.
 
 ## Ethical use of this repository
 
-Empirical data from Matsigenka communities and schools included in this repository (the files ``School_data.csv`` and ``SchoolComm_data.csv``) are provided so that other researchers can check the analyses in the associated manuscript. Due to our agreements with the communities, these data shall not be used for any other purpose unless express permission is granted by the communities. If you are interested in using these data for another purpose, please contact Caissa Revilla-Minaya (xxx@amnh.org) or John Bunce (xxx@amnh.org) to discuss the possibility of obtaining the requisite permission.
+Empirical data from Matsigenka communities and schools included in this repository (the files ``School_data.csv`` and ``SchoolComm_data.csv``) are provided so that other researchers can check the analyses in the associated manuscript. Due to our agreements with the communities, these data shall not be used for any other purpose unless express permission is granted by the communities. If you are interested in using these data for another purpose, please contact Caissa Revilla-Minaya (xxx) or John Bunce (xxx) to discuss the possibility of obtaining the requisite permission.
 
